@@ -1,6 +1,5 @@
-if platform?('ubuntu')
-     package 'python-dev' do
-       action :install
+if platform?("ubuntu")
+     package "python-dev"
 end
 
 directory "/opt/aws/cloudwatch" do
