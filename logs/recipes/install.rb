@@ -1,3 +1,8 @@
+if platform?('ubuntu')
+     package 'python-dev' do
+       action :install
+end
+
 directory "/opt/aws/cloudwatch" do
   recursive true
 end
