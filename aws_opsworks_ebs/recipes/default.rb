@@ -13,7 +13,7 @@ node["aws_opsworks_agent"]["resources"]["volumes"].each do |options|
   end
 
   execute "mkfs #{device_name_guess}" do
-    command "mkfs -t #{options[:fstype] || "xfs"} #{device_name_guess}"
+    command "mkfs -t #{options[:fstype] || "ext4"} #{device_name_guess}"
 
     only_if do
       BlockDevice.wait_for(device_name_guess)
